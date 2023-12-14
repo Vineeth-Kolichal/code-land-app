@@ -11,4 +11,5 @@ class AppTheme {
   //Colors
   static const Color themeYello = Color(0xFFFBEB5A);
   static const Color blackColor = Colors.black;
+  static const Color textFieldBg = Color(0xFFE7E6DD);
 }

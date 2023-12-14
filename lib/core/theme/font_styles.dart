@@ -3,3 +3,5 @@ import 'package:flutter/material.dart';
 
 const txt16Black500 = TextStyle(
     fontSize: 16, fontWeight: FontWeight.w500, color: AppTheme.blackColor);
+const txt20Black500 = TextStyle(
+    fontSize: 20, fontWeight: FontWeight.w500, color: AppTheme.blackColor);
