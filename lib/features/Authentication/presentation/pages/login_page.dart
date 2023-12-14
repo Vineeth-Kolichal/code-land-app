@@ -22,6 +22,7 @@ class LoginPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
+      drawer: Drawer(),
       body: SingleChildScrollView(
         child: SizedBox(
           width: double.infinity,
@@ -34,7 +35,7 @@ class LoginPage extends StatelessWidget {
                 width: 158,
               ),
               Space.y(38),
-              Text(
+              const Text(
                 'Login to your Account',
                 style: txt20Black500,
               ),
@@ -48,10 +49,42 @@ class LoginPage extends StatelessWidget {
                 controller: TextEditingController(),
                 title: 'Password',
               ),
+              Space.y(68),
+              LoginButton(
+                onPressed: () {},
+              )
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class LoginButton extends StatelessWidget {
+  const LoginButton({super.key, required this.onPressed});
+  final VoidCallback onPressed;
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return SizedBox(
+      height: 48,
+      width: size.width * 0.6,
+      child: MaterialButton(
+          color: AppTheme.themeYello,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          onPressed: () {},
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Space.x(5),
+              const Text(
+                'Login',
+                style: txt24Black500,
+              ),
+              const Icon(Icons.arrow_circle_right_outlined)
+            ],
+          )),
     );
   }
 }
