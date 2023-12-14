@@ -42,6 +42,9 @@ dependencies:
   google_fonts: ^6.1.0
   dartz: ^0.10.1
   get_it: ^7.6.4
+  loading_animation_widget: ^1.2.0+4
+  google_maps_flutter: ^2.5.0
+  sqflite: ^2.3.0
 
 dev_dependencies:
   flutter_test:
@@ -71,7 +74,12 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/logo.png
-  #   - images/a_dot_ham.jpeg
+    - assets/Icons/send.png
+    - assets/Icons/Outgoing Call.png
+    - assets/images/b1.png
+    - assets/images/b2.png
+    - assets/images/b3.png
+    - assets/images/b4.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
