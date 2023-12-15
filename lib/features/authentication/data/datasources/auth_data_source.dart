@@ -42,6 +42,8 @@ class AuthDataSourceImpl implements AuthDataSource {
       }
     } on DioException catch (e) {
       throw CustomException.fromDioError(e);
+    } catch (e) {
+      throw CustomException.otherException();
     }
   }
 }

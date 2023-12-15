@@ -1,6 +1,9 @@
 import 'package:dio/dio.dart';
 
 class CustomException implements Exception {
+  CustomException.otherException() {
+    message = "Failed";
+  }
   CustomException.fromDioError(DioException dioError) {
     if (message == null) {
       switch (dioError.type) {

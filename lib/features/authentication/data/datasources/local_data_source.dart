@@ -23,9 +23,13 @@ class LocalDataSourceImpl implements LocalDataSource {
 
   @override
   Future<void> storeData(UserContext userContext) async {
-    await db.rawInsert('INSERT INTO usercontext (lang,tz,uid) VALUES(?,?,?)',
-        [userContext.lang, userContext.tz, userContext.uid]);
-    getData();
+    try {
+      await db.rawInsert('INSERT INTO usercontext (lang,tz,uid) VALUES(?,?,?)',
+          [userContext.lang, userContext.tz, userContext.uid]);
+      getData();
+    } catch (e) {
+      print(e.toString());
+    }
   }
 
   Future<void> getData() async {

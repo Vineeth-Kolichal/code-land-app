@@ -1,5 +1,7 @@
 import 'package:dev_test/common/widgets/main_appbar.dart';
 import 'package:dev_test/common/widgets/space.dart';
+import 'package:dev_test/core/dependancy_injection/modules/cookie_module.dart';
+import 'package:dev_test/core/routes/app_routes.dart';
 import 'package:dev_test/core/theme/app_theme.dart';
 import 'package:dev_test/core/theme/font_styles.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +37,27 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
-      drawer: const Drawer(),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            DrawerHeader(
+                child: Center(
+              child: Image.asset(
+                'assets/images/logo.png',
+              ),
+            )),
+            ListTile(
+              onTap: () {
+                persistCookieJar.deleteAll().then((value) {
+                  Navigator.of(context).pushReplacementNamed(AppRoutes.login);
+                });
+              },
+              title: const Text("Logout"),
+              trailing: const Icon(Icons.logout),
+            )
+          ],
+        ),
+      ),
       body: ValueListenableBuilder(
           valueListenable: bottonNavNotifier,
           builder: (context, index, _) {
